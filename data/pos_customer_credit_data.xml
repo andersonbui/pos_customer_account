@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data noupdate="1">
         <record id="customer_account_account" model="account.account">
@@ -11,7 +11,7 @@
         <record id="account_payment_product" model="product.product">
             <field name="name">Account Payment</field>
             <field name="available_in_pos" eval="True" />
-            <field name="taxes_id" eval="[(6, 0, [ref('l10n_au.1_au_tax_sale_exempt')])]"/>
+	    <!-- <field name="taxes_id" eval="[(6, 0, [ref('l10n_au.1_au_tax_sale_exempt')])]"/> -->
         </record>
 
         <record id="pos_account_payment_method" model="pos.payment.method">
@@ -28,5 +28,6 @@
             <field name="default_credit_account_id" ref="customer_account_account"/>
             <field name="default_debit_account_id" ref="customer_account_account"/>
         </record>
+
     </data>
 </odoo>

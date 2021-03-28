@@ -67,7 +67,7 @@ class ApplyCredit(Apply):
     _name = 'pos.customer.account.apply.credit'
 
     def _default_counterpart_account(self):
-        return self.env.ref('l10n_au.1_au_11110')
+        return self.env.ref('l10n_co.co_puc_2408100505')
 
     def _is_credit(self):
         return True
@@ -79,7 +79,7 @@ class ApplyDebit(Apply):
     _name = 'pos.customer.account.apply.debit'
 
     def _default_counterpart_account(self):
-        return self.env.ref('l10n_au.1_au_11200')
+        return self.env.ref('l10n_co.co_puc_2408100505')
 
     def _is_credit(self):
         return False

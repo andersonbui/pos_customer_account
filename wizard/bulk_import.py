@@ -83,7 +83,7 @@ class BulkImport(models.TransientModel):
 
     @memoize
     def _counterpart_account_id(self):
-        return self.env.ref('l10n_au.1_au_11200').id
+        return self.env.ref('l10n_co.co_puc_2408100505').id
 
     @memoize
     def _account_id(self):

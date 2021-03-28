@@ -5,6 +5,9 @@ odoo.define('pos.customer.account.credit_button', function (require) {
     var screens = require('point_of_sale.screens');
     var models = require('point_of_sale.models');
     var field_utils = require('web.field_utils');
+    let core = require("web.core");
+
+    let _t = core._t;
 
     var CreditButton = BaseWidget.extend({
         template: 'CreditButton',
@@ -20,7 +23,7 @@ odoo.define('pos.customer.account.credit_button', function (require) {
             });
         },
         set_label: function(){
-            this.label = 'Add Credit';
+            this.label = _t('Add Credit');
             this.highlight = false;
             this.disabled = true;
 
@@ -32,11 +35,11 @@ odoo.define('pos.customer.account.credit_button', function (require) {
             var order  = this.pos.get_order();
             var credit = order.get_credit();
             if (credit === 0 && balance < 0){
-              this.label = "Pay Debt (" + this.paymentScreen.format_currency(-balance) + ")";
+              this.label = _t("Pay Debit") + " (" + this.paymentScreen.format_currency(-balance) + ")";
               this.highlight = true;
             }
             else if (credit > 0) {
-              this.label = "Paying: " + this.paymentScreen.format_currency(credit)
+              this.label = _t("Paying")+": " + this.paymentScreen.format_currency(credit)
             }
             this.update_balance(balance);
         },
@@ -51,7 +54,7 @@ odoo.define('pos.customer.account.credit_button', function (require) {
               if (tendered > 0) {
                 return this.pos.gui.show_popup('alert', {
                   title: 'Oops!',
-                  body: 'You cannot pay for account credit using the Account payment method. Please pay with only Card or Cash if you wish to pay off or add credit to this account.'
+                  body: _t('You cannot pay for account credit using the Account payment method. Please pay with only Card or Cash if you wish to pay off or add credit to this account.')
                 });
               }
             }
@@ -72,7 +75,7 @@ odoo.define('pos.customer.account.credit_button', function (require) {
             }
 
             this.gui.show_popup('number',{
-                'title': credit ? 'Change Credit' : 'Add Credit',
+                'title': credit ? _t('Change Credit') : _t('Add Credit'),
                 'value': self.format_currency_no_symbol(value),
                 'confirm': function(value) {
                     order.set_credit(field_utils.parse.float(value));
@@ -181,14 +184,14 @@ odoo.define('pos.customer.account.credit_button', function (require) {
             if (!client) {
               return this.pos.gui.show_popup('alert', {
                 title: 'Oops!',
-                body: 'You cannot pay on account when no customer is selected.'
+                body: _t('You cannot pay on account when no customer is selected.')
               });
             }
 
             if (this.get_credit() > 0) {
               return this.pos.gui.show_popup('alert', {
                 title: 'Oops!',
-                body: 'You cannot pay on Account when account credit is being purchased. Please remove the account payment item from the order before paying on Account.'
+                body: _t('You cannot pay on Account when account credit is being purchased. Please remove the account payment item from the order before paying on Account.')
               });
             }
             this.assert_editable();
