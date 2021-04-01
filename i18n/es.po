@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_customer_account
+#
+msgid ""
+msgstr ""
+
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:26
+#, python-format
+msgid "Pay Debit"
+msgstr "Pagar D&eacute;bito"
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:43
+#, python-format
+msgid 'Add Credit'
+msgstr "Agregar Crédito"
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:43
+#, python-format
+msgid 'Change Credit'
+msgstr "Cambiar débito"
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:57
+#, python-format
+msgid 'You cannot pay for account credit using the Account payment method. Please pay with only Card or Cash if you wish to pay off or add credit to this account.'
+msgstr "No puede pagar una cuenta de crédito con un método de pago de cuenta de crédito. Por favor use efectivo para pagar un crédito o adicionar débito"
+
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:57
+#, python-format
+msgid 'You cannot pay on Account when account credit is being purchased. Please remove the account payment item from the order before paying on Account.'
+msgstr "Usted no puede pagar un crédito con un cuenta de crédito. Por favor remueva el item de pago de cuenta crédito antes de pagar un crédito"
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:57
+#, python-format
+msgid 'You cannot pay on account when no customer is selected.'
+msgstr "Usted no puede pagar con credito cuando no ha seleccionado un cliente. Por favor seleccione uno."
+
+#. module: pos_customer_account
+#. openerp-web
+#: code:addons/pos_customer_account/static/src/js/credit_button.js:57
+#, python-format
+msgid "Paying"
+msgstr "Pagando"
